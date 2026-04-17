@@ -682,18 +682,19 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 .map2-right{
   background:#f8f6f0;
   border-left:1px solid rgba(212,160,23,.2);
-  overflow-y:auto;
   height:560px;
+  overflow:hidden;
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content:center;
-  padding:.5rem;
+  padding:1rem;
 }
 .map2-right img{
   width:100%;
   height:auto;
   display:block;
   object-fit:contain;
+  max-height:100%;
 }
 /* MAP RESPONSIVE */
 @media(max-width:860px){
