@@ -176,17 +176,19 @@ section{padding:5.5rem 5rem}
 .plano-sec{background:var(--bg3)}
 .map-container{
   display:grid;
-  grid-template-columns:1fr 420px;
+  grid-template-columns:1fr 244px;
   margin-top:3rem;
   border:1px solid rgba(212,160,23,.2);
   border-radius:var(--rad);
   overflow:hidden;
+  height:520px;
 }
 .map-left{
   position:relative;
   background:#1a1610;
   overflow:hidden;
   cursor:grab;
+  height:520px;
 }
 .map-left img{
   width:100%;
@@ -225,12 +227,14 @@ section{padding:5.5rem 5rem}
   background:#f7f5f0;
   border-left:1px solid rgba(212,160,23,.2);
   overflow:hidden;
-  display:flex;align-items:stretch;
+  width:244px;
+  height:520px;
 }
 .map-right img{
-  width:100%;
-  height:100%;
-  object-fit:fill;
+  width:244px;
+  height:520px;
+  object-fit:cover;
+  object-position:top center;
   display:block;
 }
 
@@ -330,9 +334,10 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .contacto-inner{grid-template-columns:1fr;gap:3rem}
   /* MAP: stack on tablet */
   .map-container{grid-template-columns:1fr}
-  .map-left{height:360px}
-  .map-right{border-left:none;border-top:2px solid rgba(212,160,23,.2)}
-  .map-right img{width:100%;height:auto;object-fit:contain}
+  .map-container{grid-template-columns:1fr!important;height:auto!important}
+  .map-left{height:320px!important}
+  .map-right{width:100%!important;height:auto!important;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
+  .map-right img{width:100%!important;height:auto!important;object-fit:contain!important}
 }
 @media(max-width:640px){
   nav{height:54px;padding:0 1rem}
