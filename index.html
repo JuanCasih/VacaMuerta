@@ -47,7 +47,7 @@ nav{
 }
 .nav-links a:hover,.nav-links a.active{border-color:var(--gold);color:var(--gold)}
 .nav-right{display:flex;align-items:center;gap:1rem}
-.countdown{display:flex;gap:.35rem;align-items:center}
+.countdown{display:none}
 .cd-unit{
   background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.25);
   border-radius:6px;padding:.2rem .45rem;text-align:center;min-width:36px;
@@ -281,13 +281,7 @@ section{padding:6rem 5rem}
 }
 .pack:hover{background:var(--bg4)}
 .pack.feat{background:var(--bg4);position:relative}
-.pack.feat::before{
-  content:'★ MÁS POPULAR';
-  position:absolute;top:0;left:50%;transform:translateX(-50%);
-  background:var(--gold);color:var(--bg);
-  font-size:.58rem;font-weight:700;letter-spacing:.2em;
-  padding:.22rem .9rem;border-radius:0 0 8px 8px;
-}
+.pack.feat::before{display:none}
 .pack-tier{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
 .pdot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
 .pname{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.35rem;text-transform:uppercase;letter-spacing:.04em}
@@ -418,8 +412,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 .wa-float:hover{background:#1fbc5a;transform:translateY(-2px);box-shadow:0 6px 32px rgba(37,211,102,.5)}
 
 /* ── RESPONSIVE ── */
-@media(max-width:768px){
-  .dirigido-grid{grid-template-columns:1fr}
+
   .stands-sec{padding:4rem 1.5rem}
   .part-intro{grid-template-columns:1fr}
   .packs-grid,.packs-row2{grid-template-columns:1fr 1fr}
@@ -428,8 +421,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .dirigido-grid{grid-template-columns:1fr}
   .hero-content{padding:4rem 2.5rem}
 }
-@media(max-width:1024px){
-  nav{padding:0 1.25rem}
+
   .nav-links{display:none}
   .nav-links.mopen{
     display:flex;flex-direction:column;
@@ -453,8 +445,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .foot-right{align-items:flex-start}
   .foot-credits{text-align:left}
 }
-@media(max-width:640px){
-  nav{height:54px;padding:0 1rem}
+
   .hero{padding-top:54px}
   .hero-content{padding:2.5rem 1.25rem 3rem}
   h1.htitle{font-size:clamp(2.4rem,10vw,3.8rem)}
@@ -504,8 +495,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .dir-col-body{padding:.85rem 1rem}
   .dir-tag{font-size:.8rem;padding:.45rem .7rem}
 }
-@media(max-width:380px){
-  h1.htitle{font-size:2.2rem}
+
   .stat-n{font-size:1.9rem}
   .stat-l{font-size:.6rem}
   .hero-date{font-size:.88rem}
@@ -546,7 +536,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 .map2-zoom-btn:hover{background:rgba(212,160,23,.2)}
 .map2-right img{width:100%;height:auto;display:block}
 .map2-right img{width:100%;display:block}
-@media(max-width:768px){}
+
 
 
 /* ── CAROUSEL ── */
@@ -576,7 +566,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 .carousel-dots{display:flex;justify-content:center;gap:.6rem;padding:1.25rem 0 0}
 .carousel-dot{width:8px;height:8px;border-radius:50%;background:rgba(212,160,23,.3);cursor:pointer;transition:all .2s}
 .carousel-dot.active{background:var(--gold);transform:scale(1.3)}
-@media(max-width:640px){.carousel-slide img,.carousel-slide{height:260px;max-height:260px}.carousel-slide-label{font-size:1.2rem;padding:1rem 1.5rem}}
+.carousel-slide-label{font-size:1.2rem;padding:1rem 1.5rem}}
 
 
 
@@ -610,46 +600,152 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 .vis-item:hover{border-color:rgba(212,160,23,.35)}
 .vis-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
 .vis-text{font-size:.88rem;color:var(--w70)}
-@media(max-width:768px){.stands-grid{grid-template-columns:1fr}.stands-sec{padding:4rem 2rem}}
-.map-legend-html{font-family:Arial,sans-serif;font-size:.73rem;color:#333;width:100%}
-.mlh-title{font-weight:700;font-size:.78rem;border:1px solid #999;padding:.3rem .5rem;margin-bottom:.5rem;letter-spacing:.05em}
-.mlh-item{display:flex;align-items:center;gap:.6rem;padding:.28rem 0;border-bottom:1px solid rgba(0,0,0,.05)}
-.mlh-dot{width:22px;height:18px;flex-shrink:0;border:1px solid rgba(0,0,0,.15)}
-.mlh-arrow{width:22px;text-align:center;font-size:1rem;flex-shrink:0;color:#CC0000;font-weight:700}
-.mlh-divider{height:1px;background:#ccc;margin:.6rem 0}
-.mlh-modules{margin-top:.5rem}
-.mlh-mod-title{font-weight:700;font-size:.75rem;text-decoration:underline;margin-bottom:.6rem;letter-spacing:.05em}
-.mlh-mod-item{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem;font-size:.75rem;color:#555}
-@media(max-width:860px){
-  .map-legend-html{display:grid;grid-template-columns:1fr 1fr;gap:.25rem}
-  .mlh-title,.mlh-divider,.mlh-modules{grid-column:1/-1}
-}
+.stands-sec{padding:4rem 2rem}}
+
+
+
+
+
+
+
+
+
+
 
 /* MAP */
 .map2-wrap{display:grid;grid-template-columns:1fr 300px;border:1px solid rgba(212,160,23,.15);border-radius:12px;overflow:hidden;margin-top:3rem;align-items:stretch}
-.map2-left{position:relative;overflow:hidden;background:#1a1610}
+.map2-left{position:relative;overflow:hidden;background:#1a1610;min-height:300px}
 .map2-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;transform-origin:center}
 .map2-zoom-controls{position:absolute;bottom:1rem;right:1rem;display:flex;flex-direction:column;gap:.4rem;z-index:10}
 .map2-zoom-btn{width:36px;height:36px;background:rgba(12,10,5,.9);border:1px solid rgba(212,160,23,.6);color:#D4A017;font-size:1.1rem;font-weight:bold;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .map2-zoom-btn:hover{background:rgba(212,160,23,.25)}
 .map2-hint{position:absolute;top:1rem;left:50%;transform:translateX(-50%);background:rgba(12,10,5,.75);border:1px solid rgba(212,160,23,.3);padding:.3rem .85rem;font-size:.65rem;color:rgba(242,238,230,.5);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;pointer-events:none;white-space:nowrap}
-.map2-right{background:#f8f6f0;border-left:1px solid rgba(212,160,23,.2);padding:1rem;display:flex;align-items:center;overflow:hidden}
-.map-legend-html{font-family:Arial,sans-serif;font-size:.75rem;color:#333}
-.mlh-title{font-weight:700;font-size:.78rem;border:1px solid #999;padding:.3rem .5rem;margin-bottom:.5rem;letter-spacing:.05em}
-.mlh-item{display:flex;align-items:center;gap:.5rem;padding:.18rem 0;border-bottom:1px solid rgba(0,0,0,.05);line-height:1.2}
-.mlh-dot{width:20px;height:14px;flex-shrink:0;border:1px solid rgba(0,0,0,.15)}
-.mlh-arrow{width:24px;text-align:center;font-size:1rem;flex-shrink:0;color:#CC0000;font-weight:bold}
-.mlh-divider{height:1px;background:#ccc;margin:.3rem 0}
-.mlh-mod-title{font-weight:700;font-size:.72rem;text-decoration:underline;margin-bottom:.35rem;margin-top:.2rem;letter-spacing:.04em}
-.mlh-mod-item{display:flex;align-items:center;gap:.5rem;margin-bottom:.35rem;font-size:.72rem;color:#555}
-@media(max-width:860px){
-  .map2-wrap{grid-template-columns:1fr}
+.map2-right{background:#f8f6f0;border-left:1px solid rgba(212,160,23,.2);overflow:hidden;display:flex;align-items:stretch}
+.map2-right img{width:100%;object-fit:cover;display:block}
+
+
+
+
+
+
+
+
+
   .map2-left{height:320px}
   .map2-right{height:auto;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
 }
-@media(max-width:480px){
-  .map2-left{height:240px}
+
+
+/* ═══════════════════════════════
+   RESPONSIVE - CLEAN SINGLE BLOCK
+   ═══════════════════════════════ */
+
+/* TABLET LANDSCAPE */
+@media(max-width:1024px){
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+  .nav-links.mopen{
+    display:flex;flex-direction:column;
+    position:fixed;top:58px;left:0;right:0;
+    background:rgba(12,10,5,.97);
+    border-bottom:1px solid rgba(212,160,23,.15);
+    padding:1.5rem 2rem;gap:1rem;z-index:400;
+  }
+  .hamburger{display:flex}
+  section{padding:4rem 2rem}
+  .about-grid,.contacto-inner{grid-template-columns:1fr;gap:2.5rem}
+  .about-tri{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat{border-bottom:1px solid rgba(212,160,23,.15)}
+  .ejes-grid,.days-grid{grid-template-columns:1fr;gap:1.25rem}
+  .packs-grid,.packs-row2{grid-template-columns:1fr}
+  .pack.feat{margin:0}
+  .form-row{grid-template-columns:1fr}
+  footer{padding:3rem 2rem}
+  .footer-inner{grid-template-columns:1fr}
+  .foot-right{align-items:flex-start}
+  .foot-credits{text-align:left}
+  .part-intro{grid-template-columns:1fr;gap:2rem}
+  .dirigido-grid{grid-template-columns:1fr}
+  .stands-grid{grid-template-columns:1fr 1fr}
+  .carousel-sec{padding:3rem 0}
+  .agenda-header{grid-template-columns:1fr;gap:2rem}
 }
+
+/* MAP TABLET */
+@media(max-width:860px){
+  .map2-wrap{grid-template-columns:1fr!important}
+  .map2-left{height:360px!important}
+  .map2-right{
+    height:auto!important;
+    border-left:none!important;
+    border-top:2px solid rgba(212,160,23,.2)!important;
+    min-height:0!important;
+  }
+  .map2-right img{width:100%!important;height:auto!important;object-fit:contain!important}
+}
+
+/* MOBILE */
+@media(max-width:640px){
+  nav{height:54px;padding:0 1rem}
+  .hero{padding-top:54px}
+  .hero-content{padding:2.5rem 1.25rem 3rem}
+  h1.htitle{font-size:clamp(2.4rem,10vw,3.8rem)}
+  .hero-date{font-size:.95rem;padding:.4rem 1.1rem}
+  .hero-btns{flex-direction:column;gap:.6rem}
+  .btn-gold,.btn-outline{justify-content:center;text-align:center;width:100%;padding:.75rem 1rem}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat-n{font-size:2.2rem}
+  .stat-l{font-size:.62rem}
+  section{padding:3rem 1.25rem}
+  .carousel-sec{padding:2.5rem 0}
+  .carousel-slide{max-height:240px!important}.carousel-slide img{height:240px!important;max-height:240px!important}
+  .carousel-slide-label{font-size:1.1rem;padding:.85rem 1.25rem}
+  .sec-title-c{font-size:clamp(1.4rem,6vw,1.9rem)}
+  .sec-title-l{font-size:clamp(1.4rem,6vw,1.9rem)}
+  .sec-sub-c{font-size:.86rem}
+  .eje-card{padding:1.5rem 1.1rem}
+  .impacto-nums{grid-template-columns:1fr;gap:1.25rem}
+  .imp-num{font-size:clamp(1.8rem,8vw,3rem)}
+  .dirigido-grid{grid-template-columns:1fr!important;display:grid!important}
+  .dir-col{width:100%!important}
+  .dir-col-head{padding:.85rem 1.1rem}
+  .dir-col-head h3{font-size:.9rem;line-height:1.2}
+  .dir-col-body{padding:.85rem 1.1rem;display:flex;flex-direction:column;gap:.4rem}
+  .dir-tag{font-size:.8rem;padding:.45rem .7rem}
+  .days-grid{grid-template-columns:1fr}
+  .day-card-body{padding:1.1rem}
+  .packs-grid,.packs-row2{grid-template-columns:1fr!important}
+  .pack{padding:1.5rem 1.1rem}
+  .pack-back{padding:1.5rem 1.1rem}
+  .pprice-val{font-size:2rem}
+  .stands-grid{grid-template-columns:1fr!important}
+  .stand-card{padding:1.5rem 1.1rem}
+  .map2-left{height:240px!important}
+  .map2-right img{width:100%!important;height:auto!important}
+  .agenda-header{grid-template-columns:1fr;gap:1.5rem}
+  .cd-big{gap:.5rem}
+  .cd-big-unit{min-width:52px;padding:.65rem .85rem}
+  .cd-big-n{font-size:1.8rem}
+  footer{padding:2.5rem 1.25rem}
+  .foot-socials .soc{width:36px;height:36px}
+  .wa-float span{display:none}
+  .wa-float{padding:.8rem;border-radius:50%}
+  .contacto-inner{gap:2rem}
+}
+
+/* SMALL MOBILE */
+@media(max-width:380px){
+  h1.htitle{font-size:2.1rem}
+  .hero-date{font-size:.82rem}
+  .stat-n{font-size:1.85rem}
+  .stat-l{font-size:.58rem}
+  .sec-title-c,.sec-title-l{font-size:1.35rem}
+  .pack{padding:1.25rem .9rem}
+  .dir-tag{font-size:.75rem}
+}
+
 </style>
 </head>
 <body>
@@ -667,13 +763,8 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
     <li><a href="#participar">¿Cómo participar?</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
-  <div class="nav-right">
-    <div class="countdown" id="countdown">
-      <div class="cd-unit"><div class="cd-n" id="cd-d">21</div><div class="cd-l">D</div></div>
-      <div class="cd-unit"><div class="cd-n" id="cd-h">14</div><div class="cd-l">H</div></div>
-      <div class="cd-unit"><div class="cd-n" id="cd-m">54</div><div class="cd-l">M</div></div>
-      <div class="cd-unit"><div class="cd-n" id="cd-s">10</div><div class="cd-l">S</div></div>
-    </div>
+  <div class="nav-right" style="gap:.5rem">
+
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </div>
@@ -1007,8 +1098,9 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
     <div data-s="right">
       <p style="font-size:.9rem;color:var(--w70);line-height:1.75;margin-bottom:1.5rem">Elegí tu forma de participar. Desde presencia en stand hasta naming exclusivo del evento, cada alternativa está diseñada para maximizar tu posicionamiento.</p>
       <div style="display:flex;gap:.75rem;flex-wrap:wrap">
-        <a href="#contacto" class="btn-gold">Reservar Stand</a>
+        <a href="#feria" class="btn-gold">Ver Plano</a>
         <a href="#contacto" class="btn-outline">Consultar</a>
+        <a href="#participar" class="btn-outline">Sponsors</a>
       </div>
     </div>
   </div>
@@ -1036,7 +1128,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
       <button class="pack-back-return" onclick="this.closest('.pack').classList.remove('flipped')">← Volver</button>
     </div>
     </div>
-    <div class="pack feat" data-s="zoom" data-delay="0.1">
+    <div class="pack" data-s="zoom" data-delay="0.1">
       <div class="pack-tier" style="margin-top:.75rem"><div class="pdot pdot-pla"></div><div class="pname pname-pla">Platino</div></div>
       <div class="pquota">Cupo Limitado</div>
       
@@ -1145,28 +1237,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
     </div>
   </div>
 
-<div style="margin-top:3rem" data-s="up">
-  <div class="sec-label" style="text-align:left">Tipos de participación</div>
-  <div style="width:40px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:.4rem 0 2rem"></div>
-  <div class="sec-title-c" data-s="up" style="text-align:left;font-size:clamp(1.5rem,2.5vw,2.2rem)">Tipo de Stands</div>
-  <div class="stands-grid" style="margin-top:2rem">
-    <div class="stand-card" data-s="up" data-delay="0">
-      <div class="stand-icon">🏛️</div>
-      <div class="stand-name">Stand Institucional</div>
-      <p class="stand-desc">Ideal para entidades públicas, cámaras empresariales y representaciones oficiales.</p>
-    </div>
-    <div class="stand-card" data-s="up" data-delay="0.12">
-      <div class="stand-icon">🏢</div>
-      <div class="stand-name">Stand Corporativo</div>
-      <p class="stand-desc">Diseñado para empresas proveedoras, industrias, servicios y soluciones tecnológicas.</p>
-    </div>
-    <div class="stand-card" data-s="up" data-delay="0.24">
-      <div class="stand-icon">⭐</div>
-      <div class="stand-name">Stand Premium</div>
-      <p class="stand-desc">Ubicación estratégica, máxima visibilidad y beneficios exclusivos.</p>
-    </div>
-  </div>
-</div>
+
 </section>
 
 <!-- PLANO -->
@@ -1186,28 +1257,9 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
       </div>
     </div>
     <div class="map2-right">
-    <div class="map-legend-html">
-      <div class="mlh-title">REFERENCIAS</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#C4A0A0"></div>Diamante</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#6BAED6"></div>Platinum</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#C9A84C"></div>Oro</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#9BAFC7"></div>Plata</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#B07040"></div>Bronce</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#00CC00"></div>Auspicio/Apoyo</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#D4C24A"></div>Rodados gran tamaño</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#F0ECC8;border:1px solid #ccc"></div>Aire libre</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#E05A20"></div>Viviendas modulares</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#0000CC"></div>Food Trucks</div>
-      <div class="mlh-item"><div class="mlh-dot" style="background:#C8C8C8;border:1px solid #aaa"></div>Estacionamiento</div>
-      <div class="mlh-divider"></div>
-      <div class="mlh-item"><span style="color:#CC0000;font-weight:bold;width:20px;display:inline-block">⟷</span>Ingresos/Egresos</div>
-      <div class="mlh-item"><span style="color:#E05A20;font-weight:bold;width:20px;display:inline-block">➔</span>Ingreso peatonal</div>
-      <div class="mlh-divider"></div>
-      <div class="mlh-mod-title">MÓDULOS UTILIZADOS</div>
-      <div class="mlh-mod-item"><div style="width:28px;height:28px;background:#E05A20;border:1px solid #ccc;flex-shrink:0"></div><span>2.78 × 2.78m</span></div>
-      <div class="mlh-mod-item"><div style="width:56px;height:14px;background:#D4C24A;border:1px solid #ccc;flex-shrink:0"></div><span>20 × 5m</span></div>
+      <img src="plano_right.jpg" alt="Referencias Plano VMC 2026">
     </div>
-    </div>
+  </div>
 </section>
 
 <!-- LIGHTBOX -->
@@ -1332,13 +1384,9 @@ function updateCD(){
   const m = Math.floor((diff%36e5)/6e4);
   const s = Math.floor((diff%6e4)/1e3);
   const pad = n => String(n).padStart(2,'0');
-  document.getElementById('cd-d').textContent = d;
-  document.getElementById('cd-h').textContent = pad(h);
-  document.getElementById('cd-m').textContent = pad(m);
-  document.getElementById('cd-s').textContent = pad(s);
-  document.getElementById('cdb-d').textContent = d;
-  document.getElementById('cdb-h').textContent = pad(h);
-  document.getElementById('cdb-m').textContent = pad(m);
+  const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val; };
+  set('cd-d', d); set('cd-h', pad(h)); set('cd-m', pad(m)); set('cd-s', pad(s));
+  set('cdb-d', d); set('cdb-h', pad(h)); set('cdb-m', pad(m));
 }
 updateCD(); setInterval(updateCD, 1000);
 
