@@ -188,8 +188,8 @@ section{padding:5.5rem 5rem}
 .carousel-sec{background:var(--bg2);padding:4.5rem 0}
 .car-inner{position:relative;overflow:hidden;margin-top:2rem}
 .car-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1)}
-.cs{flex:0 0 100%;position:relative;height:520px;overflow:hidden}
-.cs img{width:100%;height:520px;object-fit:cover;object-position:center;display:block}
+.cs{flex:0 0 100%;position:relative;height:620px;overflow:hidden}
+.cs img{width:100%;height:620px;object-fit:cover;object-position:center;display:block}
 .cl{position:absolute;bottom:0;left:0;right:0;padding:2rem 3rem;background:linear-gradient(to top,rgba(12,10,5,.9) 0%,transparent 100%);font-family:'Oswald',sans-serif;font-weight:700;font-size:1.7rem;text-transform:uppercase;color:var(--w);letter-spacing:.04em}
 .car-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(12,10,5,.72);border:1px solid rgba(212,160,23,.4);color:var(--gold);font-size:1.4rem;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .car-btn:hover{background:rgba(212,160,23,.2)}
@@ -296,7 +296,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .stat-n{font-size:2.2rem}
   section{padding:3rem 1.25rem}
   .carousel-sec{padding:3rem 0}
-  .cs{height:260px!important}
+  .cs{flex:0 0 100%;position:relative;height:620px;overflow:hidden}
   .cl{font-size:1.1rem;padding:.85rem 1.25rem}
   .sh{font-size:clamp(1.4rem,6vw,1.9rem)}
   .sh-l{font-size:clamp(1.4rem,6vw,1.9rem)}
@@ -312,21 +312,6 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 
   .stat-n{font-size:1.85rem}
 }
-
-/* ═══ MAP ═══ */
-.map-container{display:grid;grid-template-columns:1fr 244px;margin-top:3rem;border:1px solid rgba(212,160,23,.2);border-radius:var(--rad);overflow:hidden;height:520px}
-.map-left{position:relative;background:#1a1610;overflow:hidden;cursor:grab;height:520px}
-.map-left img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;transform-origin:center}
-.map-zoom{position:absolute;bottom:1rem;right:1rem;display:flex;flex-direction:column;gap:.4rem;z-index:10}
-.mzb{width:38px;height:38px;background:rgba(12,10,5,.88);border:1px solid rgba(212,160,23,.55);color:var(--gold);font-size:1.15rem;font-weight:700;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
-.mzb:hover{background:rgba(212,160,23,.2)}
-.map-hint{position:absolute;top:1rem;left:50%;transform:translateX(-50%);background:rgba(12,10,5,.78);border:1px solid rgba(212,160,23,.3);padding:.3rem .9rem;font-size:.63rem;color:rgba(242,238,230,.5);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;pointer-events:none;white-space:nowrap}
-.map-right{background:#fff;border-left:1px solid rgba(212,160,23,.2);overflow:hidden;width:244px;height:520px;flex-shrink:0}
-.map-right img{width:244px;height:520px;object-fit:cover;object-position:top center;display:block;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
-
-  .map-left{height:320px}
-  .map-right{width:100%;height:auto;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
-  .map-right img{width:100%;height:auto;object-fit:contain;object-position:top}
 }
 
 
@@ -376,10 +361,6 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 
 /* TABLET PORTRAIT - MAP */
 @media(max-width:900px){
-  .map-container{grid-template-columns:1fr;height:auto}
-  .map-left{height:320px}
-  .map-right{width:100%;height:auto;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
-  .map-right img{width:100%;height:auto;object-fit:contain;object-position:top}
 }
 
 /* HERO 2-COL → 1-COL */
@@ -396,7 +377,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .hero{padding-top:54px}
   section{padding:3rem 1.25rem}
   .carousel-sec{padding:3rem 0}
-  .cs{height:260px!important}
+  .cs{flex:0 0 100%;position:relative;height:620px;overflow:hidden}
   .cl{font-size:1.1rem;padding:.85rem 1.25rem}
   h1{font-size:clamp(2.4rem,10vw,3.8rem)!important}
   .date-badge{font-size:.9rem;padding:.4rem 1.1rem}
@@ -410,7 +391,6 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .dir-grid{grid-template-columns:1fr!important}
   .dir-body{padding:.85rem 1.1rem;display:flex;flex-direction:column;gap:.4rem}
   .dir-tag{font-size:.8rem}
-  .map-left{height:240px}
   .packs,.packs2{grid-template-columns:1fr!important}
   .pack{padding:1.5rem 1.1rem}
   .hero-c > div[style*="grid"]{padding:0 1.25rem!important}
@@ -429,9 +409,47 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 
 /* MAP SMALL MOBILE */
 @media(max-width:480px){
-  .map-left{height:200px}
 }
 
+
+/* MAP */
+.map-container{display:grid;grid-template-columns:1fr 244px;margin-top:3rem;border:1px solid rgba(212,160,23,.2);border-radius:var(--rad);overflow:hidden;height:520px}
+.map-left{position:relative;overflow:hidden;background:#1a1610;height:520px}
+.map-left img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;transform-origin:center}
+.map-zoom{position:absolute;bottom:1rem;right:1rem;display:flex;flex-direction:column;gap:.4rem;z-index:10}
+.mzb{width:38px;height:38px;background:rgba(12,10,5,.88);border:1px solid rgba(212,160,23,.55);color:var(--gold);font-size:1.15rem;font-weight:700;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.mzb:hover{background:rgba(212,160,23,.2)}
+.map-hint{position:absolute;top:1rem;left:50%;transform:translateX(-50%);background:rgba(12,10,5,.78);border:1px solid rgba(212,160,23,.3);padding:.3rem .9rem;font-size:.63rem;color:rgba(242,238,230,.5);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;pointer-events:none;white-space:nowrap}
+.map-right{background:#fff;border-left:1px solid rgba(212,160,23,.2);overflow:hidden;width:244px;height:520px;flex-shrink:0}
+.map-right img{width:244px;height:520px;object-fit:cover;object-position:top center;display:block}
+
+/* HERO BANNER */
+.hero-banner-wrap{flex-shrink:0}
+@media(max-width:768px){
+  .hero-banner-wrap{display:none!important}
+  .hero-c > div{grid-template-columns:1fr!important;padding:0 2rem!important}
+}
+
+/* MAP MOBILE */
+@media(max-width:900px){
+  .map-container{grid-template-columns:1fr;height:auto}
+  .map-left{height:320px}
+  .map-right{width:100%;height:auto;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
+  .map-right img{width:100%;height:auto;object-fit:contain;object-position:top}
+}
+@media(max-width:480px){
+  .map-left{height:220px}
+}
+
+/* CAROUSEL MOBILE */
+@media(max-width:640px){
+  .cs{height:300px!important}
+  .cs img{height:300px!important}
+}
+
+@media(max-width:640px){
+  .hero-c > div{padding:0 1.25rem!important;gap:1rem!important}
+}
 </style>
 </head>
 <body>
@@ -487,7 +505,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
       </div>
     </div>
     <!-- RIGHT IMAGE -->
-    <div data-s="zoom" data-delay="0.2" style="flex-shrink:0">
+    <div class="hero-banner-wrap" data-s="zoom" data-delay="0.2">
       <img src="hero_banner.jpg" alt="Vaca Muerta Construye 2026" style="width:min(380px,38vw);height:auto;display:block;border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.6)">
     </div>
   </div>
@@ -647,14 +665,14 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 </section>
 
 <!-- PLANO -->
-<section class="plano-sec" id="feria" style="position:relative;overflow:hidden">
+<section class="plano-sec" id="feria" style="position:relative">
   <div style="position:absolute;inset:0;background:url('bg_casco.jpg') center/cover no-repeat;opacity:.06;z-index:0;pointer-events:none"></div>
   <span class="sl" style="position:relative;z-index:1">Espacio DUAM — Ciudad de Neuquén</span>
   <div class="sl-line" style="position:relative;z-index:1"></div>
   <div class="sh" data-s="up" style="position:relative;z-index:1">Plano de la Feria</div>
   <p class="ss" style="position:relative;z-index:1" data-s="up" data-delay="0.1">+248 stands distribuidos en sectores interiores y exteriores. Módulos de 2.78 × 2.78m y espacios para vehículos de gran porte.</p>
 
-  <div class="map-container" style="position:relative;z-index:1" data-s="up" data-delay="0.15">
+  <div class="map-container" data-s="up" data-delay="0.15">
     <div class="map-left" id="mapLeft">
       <div class="map-hint">🔍 Usá los botones para hacer zoom</div>
       <img id="mapImg" src="plano_left.jpg" alt="Plano Feria VMC 2026" style="transform-origin:center">
