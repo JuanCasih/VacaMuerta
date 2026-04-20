@@ -22,8 +22,8 @@ img{display:block;max-width:100%}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;height:58px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(12,10,5,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--br)}
 .logo{display:flex;align-items:center;gap:8px}
 .logo svg{width:28px;height:28px}
-.logo-text{font-family:'Oswald',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.2}
-.logo-sub{font-size:.58rem;font-weight:400;letter-spacing:.2em;color:var(--gold);display:block}
+.logo-text{display:none}
+.logo-sub{display:none}
 .nav-links{display:flex;gap:0;list-style:none}
 .nav-links a{color:var(--w5);font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:.4rem .8rem;border:1px solid transparent;border-radius:999px;transition:all .2s}
 .nav-links a:hover{border-color:var(--gold);color:var(--gold)}
@@ -341,8 +341,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 
 <nav>
   <a href="#inicio" class="logo">
-    <svg viewBox="0 0 56 56" fill="none"><polygon points="28,3 54,50 2,50" fill="none" stroke="#D4A017" stroke-width="3.5"/><polygon points="28,15 48,46 8,46" fill="#D4A017" opacity="0.22"/></svg>
-    <div class="logo-text">Vaca Muerta Construye<span class="logo-sub">La Expo de la Construcción</span></div>
+    <img src="logo.png" alt="Vaca Muerta Construye" style="height:42px;width:auto;display:block">
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#inicio">Inicio</a></li>
@@ -597,7 +596,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 <footer>
   <div class="foot-inner">
     <div>
-      <div class="foot-brand"><svg viewBox="0 0 56 56" fill="none"><polygon points="28,3 54,50 2,50" fill="none" stroke="#D4A017" stroke-width="3"/><polygon points="28,15 48,46 8,46" fill="#D4A017" opacity=".2"/></svg><div class="foot-name">Vaca Muerta <span>Construye</span></div></div>
+      <div class="foot-brand"><img src="logo.png" alt="Vaca Muerta Construye" style="height:52px;width:auto;display:block"></div>
       <div class="foot-copy">Infraestructura, inversión y desarrollo para el futuro energético.<br>La Expo de la Construcción · 1ª Edición Nacional e Internacional<br>26, 27 y 28 de Agosto de 2026 · Espacio DUAM · Ciudad de Neuquén, Argentina<br>© 2026 Vaca Muerta Construye · Organiza: Gold Black Business</div>
     </div>
     <div class="foot-right">
