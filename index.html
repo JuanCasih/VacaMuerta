@@ -432,10 +432,10 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 
 /* MAP MOBILE */
 @media(max-width:900px){
-  .map-container{grid-template-columns:1fr;height:auto}
-  .map-left{height:320px}
-  .map-right{width:100%;height:auto;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
-  .map-right img{width:100%;height:auto;object-fit:contain;object-position:top}
+  .map-container{grid-template-columns:1fr!important;height:auto!important}
+  #mapLeft{height:320px!important}
+  .map-right{width:100%!important;height:auto!important;border-left:none!important;border-top:2px solid rgba(212,160,23,.2)!important}
+  .map-right img{width:100%!important;height:auto!important;object-fit:contain!important;object-position:top!important}
 }
 @media(max-width:480px){
   .map-left{height:220px}
@@ -672,8 +672,8 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   <div class="sh" data-s="up" style="position:relative;z-index:1">Plano de la Feria</div>
   <p class="ss" style="position:relative;z-index:1" data-s="up" data-delay="0.1">+248 stands distribuidos en sectores interiores y exteriores. Módulos de 2.78 × 2.78m y espacios para vehículos de gran porte.</p>
 
-  <div class="map-container" data-s="up" data-delay="0.15">
-    <div class="map-left" id="mapLeft">
+  <div class="map-container" data-s="up" data-delay="0.15" style="display:grid;grid-template-columns:1fr 244px;height:520px;border:1px solid rgba(212,160,23,.2);border-radius:10px;overflow:hidden;margin-top:3rem">
+    <div class="map-left" id="mapLeft" style="position:relative;overflow:hidden;background:#1a1610;height:520px;cursor:grab">
       <div class="map-hint">🔍 Usá los botones para hacer zoom</div>
       <img id="mapImg" src="plano_left.jpg" alt="Plano Feria VMC 2026" style="transform-origin:center">
       <div class="map-zoom">
@@ -682,8 +682,8 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
         <button class="mzb" onclick="mreset()" style="font-size:.7rem">⊙</button>
       </div>
     </div>
-    <div class="map-right">
-      <img src="referencias_v2.jpg" alt="Referencias Plano VMC 2026">
+    <div class="map-right" style="background:#fff;border-left:1px solid rgba(212,160,23,.2);overflow:hidden;width:244px;height:520px;flex-shrink:0">
+      <img src="referencias_v2.jpg" alt="Referencias Plano VMC 2026" style="width:244px;height:520px;object-fit:cover;object-position:top center;display:block">
     </div>
   </div>
 </section>
