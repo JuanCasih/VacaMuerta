@@ -37,7 +37,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:58px;display:flex;ali
 .hero{min-height:100vh;padding-top:58px;position:relative;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('bg_obreros.jpg') center/cover;filter:brightness(.4)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,10,5,.85) 0%,rgba(12,10,5,.5) 100%)}
-.hero-c{position:relative;z-index:1;padding:4rem 5rem}
+.hero-c{position:relative;z-index:1;padding:4rem 0;display:flex;align-items:center}
 .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,160,23,.4);border-radius:999px;padding:.3rem 1rem;font-size:.72rem;color:var(--w7);letter-spacing:.16em;margin-bottom:1.5rem}
 .pill::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
@@ -115,7 +115,7 @@ section{padding:5.5rem 5rem}
 .agenda{background:var(--bg);position:relative}
 .agenda-bg{position:absolute;inset:0;background:url('bg_casco.jpg') center/cover no-repeat;opacity:.1}
 .agenda-inner{position:relative;z-index:1}
-.agenda-top{display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:start;margin-bottom:3rem}
+.agenda-top{margin-bottom:3rem}
 .cd-big{display:flex;gap:.85rem}
 .cd-u{background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.25);border-radius:10px;padding:.85rem 1.1rem;text-align:center;min-width:64px}
 .cd-n{font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700;color:var(--w);line-height:1}
@@ -256,8 +256,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 [data-s].vis{opacity:1!important;transform:none!important}
 
 /* RESPONSIVE */
-@media(max-width:1024px){
-  nav{padding:0 1.25rem}
+
   .nav-links{display:none}
   .nav-links.mopen{display:flex;flex-direction:column;position:fixed;top:58px;left:0;right:0;background:rgba(12,10,5,.97);border-bottom:1px solid var(--br);padding:1.5rem 2rem;gap:1rem;z-index:400}
   .ham{display:flex}
@@ -276,7 +275,6 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .foot-creds{text-align:left}
   .part-top{grid-template-columns:1fr;gap:2rem}
   .imp-nums{grid-template-columns:1fr;gap:1.5rem}
-  .agenda-top{grid-template-columns:1fr;gap:2rem}
   .contacto-inner{grid-template-columns:1fr;gap:3rem}
   /* MAP: stack on tablet */
   
@@ -285,7 +283,8 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   
   
 }
-@media(max-width:640px){
+
+  .hero-c > div > div:last-child{display:none}
   nav{height:54px;padding:0 1rem}
   .hero{padding-top:54px}
   .hero-c{padding:2.5rem 1.25rem 3rem}
@@ -310,8 +309,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
   .wa{padding:.8rem;border-radius:50%}
   footer{padding:2.5rem 1.25rem}
 }
-@media(max-width:380px){
-  h1{font-size:2.1rem}
+
   .stat-n{font-size:1.85rem}
 }
 
@@ -325,14 +323,113 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 .map-hint{position:absolute;top:1rem;left:50%;transform:translateX(-50%);background:rgba(12,10,5,.78);border:1px solid rgba(212,160,23,.3);padding:.3rem .9rem;font-size:.63rem;color:rgba(242,238,230,.5);letter-spacing:.1em;text-transform:uppercase;border-radius:999px;pointer-events:none;white-space:nowrap}
 .map-right{background:#fff;border-left:1px solid rgba(212,160,23,.2);overflow:hidden;width:244px;height:520px;flex-shrink:0}
 .map-right img{width:244px;height:520px;object-fit:cover;object-position:top center;display:block;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
+
+  .map-left{height:320px}
+  .map-right{width:100%;height:auto;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
+  .map-right img{width:100%;height:auto;object-fit:contain;object-position:top}
+}
+
+
+
+/* HERO RESPONSIVE */
+
+  .hero-c > div > div:last-child{
+    display:none!important;
+  }
+}
+
+
+/* NAV LOGO TEXT responsive */
+
+
+/* AGENDA TOP single col */
+.agenda-top{margin-bottom:3rem}
+
+
+/* ════════════════════════════
+   RESPONSIVE — SINGLE CLEAN BLOCK
+   ════════════════════════════ */
+
+/* TABLET LANDSCAPE */
+@media(max-width:1024px){
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+  .nav-links.mopen{display:flex;flex-direction:column;position:fixed;top:58px;left:0;right:0;background:rgba(12,10,5,.97);border-bottom:1px solid rgba(212,160,23,.15);padding:1.5rem 2rem;gap:1rem;z-index:400}
+  .ham{display:flex}
+  section{padding:4rem 2rem}
+  .about{grid-template-columns:1fr;gap:2.5rem}
+  .about-tri{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat{border-bottom:1px solid rgba(212,160,23,.2)}
+  .ejes-grid,.days,.dir-grid{grid-template-columns:1fr;gap:1.25rem}
+  .packs,.packs2{grid-template-columns:1fr}
+  .fr{grid-template-columns:1fr}
+  footer{padding:3rem 2rem}
+  .foot-inner{grid-template-columns:1fr}
+  .foot-right{align-items:flex-start}
+  .foot-creds{text-align:left}
+  .part-top{grid-template-columns:1fr;gap:2rem}
+  .imp-nums{grid-template-columns:1fr;gap:1.5rem}
+  .contacto-inner{grid-template-columns:1fr;gap:3rem}
+}
+
+/* TABLET PORTRAIT - MAP */
 @media(max-width:900px){
   .map-container{grid-template-columns:1fr;height:auto}
   .map-left{height:320px}
   .map-right{width:100%;height:auto;border-left:none;border-top:2px solid rgba(212,160,23,.2)}
   .map-right img{width:100%;height:auto;object-fit:contain;object-position:top}
 }
+
+/* HERO 2-COL → 1-COL */
+@media(max-width:768px){
+  .hero-c > div[style*="grid"]{grid-template-columns:1fr!important;padding:0 2rem!important;gap:2rem!important}
+  .hero-c > div > div:last-child{display:none!important}
+  .logo > div{display:none!important}
+  .dir-grid{grid-template-columns:1fr!important}
+}
+
+/* MOBILE */
+@media(max-width:640px){
+  nav{height:54px;padding:0 1rem}
+  .hero{padding-top:54px}
+  section{padding:3rem 1.25rem}
+  .carousel-sec{padding:3rem 0}
+  .cs{height:240px}
+  .cl{font-size:1.1rem;padding:.85rem 1.25rem}
+  h1{font-size:clamp(2.4rem,10vw,3.8rem)!important}
+  .date-badge{font-size:.9rem;padding:.4rem 1.1rem}
+  .btns{flex-direction:column;gap:.6rem}
+  .btn-g,.btn-o{justify-content:center;width:100%;padding:.72rem 1rem}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat-n{font-size:2.2rem}
+  .sh{font-size:clamp(1.4rem,6vw,1.9rem)}
+  .sh-l{font-size:clamp(1.4rem,6vw,1.9rem)}
+  .ss{font-size:.85rem}
+  .dir-grid{grid-template-columns:1fr!important}
+  .dir-body{padding:.85rem 1.1rem;display:flex;flex-direction:column;gap:.4rem}
+  .dir-tag{font-size:.8rem}
+  .map-left{height:240px}
+  .packs,.packs2{grid-template-columns:1fr!important}
+  .pack{padding:1.5rem 1.1rem}
+  .hero-c > div[style*="grid"]{padding:0 1.25rem!important}
+  footer{padding:2.5rem 1.25rem}
+  .wa span{display:none}
+  .wa{padding:.8rem;border-radius:50%}
+}
+
+/* SMALL MOBILE */
+@media(max-width:380px){
+  h1{font-size:2.1rem!important}
+  .stat-n{font-size:1.85rem}
+  .sh{font-size:1.35rem}
+  .pack{padding:1.25rem .9rem}
+}
+
+/* MAP SMALL MOBILE */
 @media(max-width:480px){
-  .map-left{height:220px}
+  .map-left{height:200px}
 }
 
 </style>
@@ -340,8 +437,12 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 <body>
 
 <nav>
-  <a href="#inicio" class="logo">
+  <a href="#inicio" class="logo" style="display:flex;align-items:center;gap:10px;text-decoration:none">
     <img src="logo.png" alt="Vaca Muerta Construye" style="height:42px;width:auto;display:block">
+    <div style="display:flex;flex-direction:column;line-height:1.2">
+      <span style="font-family:'Oswald',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#F2EEE6">VACA MUERTA CONSTRUYE</span>
+      <span style="font-family:'Lato',sans-serif;font-weight:300;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#D4A017">LA EXPO DE LA CONSTRUCCIÓN</span>
+    </div>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#inicio">Inicio</a></li>
@@ -358,20 +459,28 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 <section class="hero" id="inicio">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-c">
-    <div class="pill" data-s="fade">1ª Edición · Nacional e Internacional</div>
-    <h1 data-s="up" data-delay="0.1">
-      <span class="w">La Expo<br>de la</span><br>
-      <span class="g">Construcción</span>
-    </h1>
-    <div class="date-badge" data-s="up" data-delay="0.2">26, 27 y 28 de Agosto de 2026</div>
-    <div class="location" data-s="up" data-delay="0.25">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span><strong>Espacio DUAM</strong> · Ciudad de Neuquén, Argentina</span>
+  <div style="display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;width:100%;max-width:1200px;padding:0 5rem;position:relative;z-index:1">
+    <!-- LEFT CONTENT -->
+    <div data-s="up">
+      <h1 style="font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(3rem,5.5vw,6rem);line-height:.9;text-transform:uppercase;margin-bottom:1.25rem">
+        <span style="color:rgba(242,238,230,1);display:block">La Expo</span>
+        <span style="color:rgba(242,238,230,1);display:block">de la</span>
+        <span style="color:#D4A017;font-style:italic;display:block">Construcción</span>
+      </h1>
+      <div style="display:inline-block;background:#D4A017;color:#141008;font-family:'Oswald',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.04em;text-transform:uppercase;padding:.5rem 2rem;border-radius:999px;margin-bottom:.85rem">26, 27 y 28 de Agosto de 2026</div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:.9rem;color:rgba(242,238,230,.75);margin-bottom:.35rem">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4A017" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span><strong style="color:rgba(242,238,230,1)">Espacio DUAM</strong> · Ciudad de Neuquén, Argentina</span>
+      </div>
+      <div style="font-size:.72rem;color:rgba(242,238,230,.5);letter-spacing:.15em;text-transform:uppercase;margin-bottom:2.5rem">1ª Edición · Nacional e Internacional</div>
+      <div style="display:flex;gap:.85rem;flex-wrap:wrap">
+        <a href="#participar" class="btn-g">Reservar Stand</a>
+        <a href="#sobre" class="btn-o">Participar</a>
+      </div>
     </div>
-    <div class="btns" data-s="up" data-delay="0.3">
-      <a href="#participar" class="btn-g">Reservar Stand</a>
-      <a href="#sobre" class="btn-o">Participar</a>
+    <!-- RIGHT IMAGE -->
+    <div data-s="zoom" data-delay="0.2" style="flex-shrink:0">
+      <img src="hero_banner.jpg" alt="Vaca Muerta Construye 2026" style="width:min(380px,38vw);height:auto;display:block;border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.6)">
     </div>
   </div>
 </section>
@@ -487,15 +596,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
     <span class="sl">Organización del evento</span>
     <div class="sl-line"></div>
     <div class="agenda-top">
-      <div data-s="left">
-        <p style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Tiempo restante</p>
-        <div class="cd-big">
-          <div class="cd-u"><div class="cd-n" id="cdb-d">130</div><div class="cd-l">Días</div></div>
-          <div class="cd-u"><div class="cd-n" id="cdb-h">20</div><div class="cd-l">Horas</div></div>
-          <div class="cd-u"><div class="cd-n" id="cdb-m">00</div><div class="cd-l">Min</div></div>
-        </div>
-      </div>
-      <div data-s="right">
+      <div data-s="up">
         <div class="sh-l">Actividades de cada día</div>
         <p style="font-family:'Oswald',sans-serif;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:.07em;color:var(--w);margin-top:.2rem">Conocé nuestro programa</p>
       </div>
@@ -618,17 +719,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(212,160,23,.12);padding:3
 </a>
 
 <script>
-// COUNTDOWN
-const EVT = new Date('2026-08-26T09:00:00-03:00');
-function updateCD(){
-  const diff = EVT - new Date();
-  if(diff<=0) return;
-  const d=Math.floor(diff/864e5), h=Math.floor((diff%864e5)/36e5), m=Math.floor((diff%36e5)/6e4), s=Math.floor((diff%6e4)/1e3);
-  const p=n=>String(n).padStart(2,'0');
-  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
-  set('cdb-d',d); set('cdb-h',p(h)); set('cdb-m',p(m));
-}
-updateCD(); setInterval(updateCD,1000);
+// Countdown removed
 
 // SCROLL ANIMATIONS
 document.querySelectorAll('[data-s]').forEach(el=>{
