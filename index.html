@@ -83,7 +83,7 @@ section{padding:5.5rem 5rem}
 .fc-front-lbl{position:absolute;bottom:0;left:0;right:0;padding:24px 20px 18px;background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,transparent 100%)}
 .fc-front-lbl h3{color:var(--w);font-size:1.1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
 .fc-front-lbl .fc-hint{color:var(--gold);font-size:.78rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
-.fc-back{transform:rotateY(180deg);background:var(--dark2);display:flex;flex-direction:column;justify-content:center;padding:28px 26px;border:1px solid rgba(212,175,55,.2)}
+.fc-back{transform:rotateY(180deg);background:var(--dark2);display:flex;flex-direction:column;justify-content:center;padding:28px 26px;border:1px solid rgba(212,175,55,.2);cursor:pointer}
 .fc-back .fc-ico{font-size:2.2rem;margin-bottom:12px}
 .fc-back h3{color:var(--gold);font-size:.9rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}
 .fc-back p{color:var(--w7);font-size:.95rem;line-height:1.7;margin-bottom:10px}
@@ -142,14 +142,14 @@ section{padding:5.5rem 5rem}
 .packs-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative;z-index:1;margin-bottom:16px}
 .packs-wrap2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative;z-index:1}
 /* Wrapper para perspectiva */
-.pack-flip-wrap{height:280px;perspective:1200px}
+.pack-flip-wrap{height:320px;perspective:1200px;overflow:hidden}
 /* El pack rota */
-.pack{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.pack{width:100%;height:100%;position:relative;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,0,.2,1)}
 .pack.flipped{transform:rotateY(180deg)}
 /* Caras */
-.pack-front,.pack-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--rad);padding:1.85rem 1.6rem;display:flex;flex-direction:column}
+.pack-front,.pack-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--rad);padding:1.6rem 1.5rem;display:flex;flex-direction:column;overflow:hidden}
 .pack-front{background:#fff;border:1px solid rgba(0,0,0,.08)}
-.pack-back{background:var(--dark2);transform:rotateY(180deg);align-items:center;justify-content:center;text-align:center;gap:.6rem;border:1px solid rgba(212,175,55,.2)}
+.pack-back{background:var(--dark2);transform:rotateY(180deg);align-items:center;justify-content:center;text-align:center;gap:.5rem;border:1px solid rgba(212,175,55,.2)}
 .pack-tier{display:flex;align-items:center;gap:.55rem;margin-bottom:.4rem}
 .pdot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
 .pname{font-family:var(--font);font-weight:700;font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em}
@@ -267,6 +267,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
   .ham{display:flex}
   section{padding:4rem 2rem}
   .ejes-grid,.perfil-sec-inner,.packs-wrap,.packs-wrap2{grid-template-columns:1fr!important}
+  .pack-flip-wrap{height:300px}
   .days-row{flex-direction:column}
   .participar-top{grid-template-columns:1fr;gap:1.5rem}
   .contacto-inner{grid-template-columns:1fr;gap:3rem}
@@ -332,7 +333,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
     <div class="hero-meta">
       <div class="hero-meta-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        27, 28 y 29 de Mayo de 2026
+        27, 28 y 29 de Agosto de 2026
       </div>
       <div class="hero-meta-item">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -446,7 +447,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
     <div class="days-row">
       <div class="day-acc" data-s="up" data-delay="0">
         <div class="day-acc-hdr" onclick="toggleDay(this)">
-          <div class="day-acc-hdr-left"><div class="day-num">01</div><div class="day-label">Miércoles 27 de Mayo</div></div>
+          <div class="day-acc-hdr-left"><div class="day-num">01</div><div class="day-label">Miércoles 27 de Agosto</div></div>
           <div class="day-chevron">▾</div>
         </div>
         <div class="day-body"><div class="day-body-inner">
@@ -457,7 +458,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
       </div>
       <div class="day-acc" data-s="up" data-delay="0.15">
         <div class="day-acc-hdr" onclick="toggleDay(this)">
-          <div class="day-acc-hdr-left"><div class="day-num">02</div><div class="day-label">Jueves 28 de Mayo</div></div>
+          <div class="day-acc-hdr-left"><div class="day-num">02</div><div class="day-label">Jueves 28 de Agosto</div></div>
           <div class="day-chevron">▾</div>
         </div>
         <div class="day-body"><div class="day-body-inner">
@@ -468,7 +469,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
       </div>
       <div class="day-acc" data-s="up" data-delay="0.3">
         <div class="day-acc-hdr" onclick="toggleDay(this)">
-          <div class="day-acc-hdr-left"><div class="day-num">03</div><div class="day-label">Viernes 29 de Mayo</div></div>
+          <div class="day-acc-hdr-left"><div class="day-num">03</div><div class="day-label">Viernes 29 de Agosto</div></div>
           <div class="day-chevron">▾</div>
         </div>
         <div class="day-body"><div class="day-body-inner">
@@ -722,7 +723,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
   <div class="foot-inner">
     <div>
       <div class="foot-brand"><img src="logo_v2.png" alt="Vaca Muerta Construye"></div>
-      <div class="foot-copy">Infraestructura, inversión y desarrollo para el futuro energético.<br>La Expo de la Construcción · 1ª Edición Nacional e Internacional<br>27, 28 y 29 de Mayo de 2026 · Espacio DUAM · Ciudad de Neuquén, Argentina<br>© 2026 Vaca Muerta Construye · Organiza: Gold Black Business</div>
+      <div class="foot-copy">Infraestructura, inversión y desarrollo para el futuro energético.<br>La Expo de la Construcción · 1ª Edición Nacional e Internacional<br>27, 28 y 29 de Agosto de 2026 · Espacio DUAM · Ciudad de Neuquén, Argentina<br>© 2026 Vaca Muerta Construye · Organiza: Gold Black Business</div>
     </div>
     <div class="foot-right">
       <div class="foot-soc">
@@ -778,8 +779,13 @@ function unflip(name){
   if(pack) pack.classList.remove('flipped');
 }
 
-// EJES & PERFIL FLIP
+// EJES & PERFIL FLIP — click en cualquier lado de la card la da vuelta
 function toggleFlip(card){card.classList.toggle('flipped');}
+// Hacer que el back también sea clickeable para volver
+document.querySelectorAll('.fc-back').forEach(back=>{
+  back.style.cursor='pointer';
+  back.addEventListener('click',()=>back.closest('.fc').classList.remove('flipped'));
+});
 
 // AGENDA ACORDEÓN
 function toggleDay(hdr){const body=hdr.nextElementSibling;const isOpen=body.classList.contains('open');document.querySelectorAll('.day-body').forEach(b=>b.classList.remove('open'));document.querySelectorAll('.day-acc-hdr').forEach(h=>h.classList.remove('active'));if(!isOpen){body.classList.add('open');hdr.classList.add('active');}}
