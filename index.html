@@ -134,38 +134,40 @@ section{padding:5.5rem 5rem}
 .day-desc{font-size:.92rem;color:var(--text-light);line-height:1.6}
 
 /* PARTICIPAR */
-.participar-sec{background:var(--bg);position:relative;overflow:hidden}
+.participar-sec{background:var(--bg);position:relative}
 .participar-bg{position:absolute;inset:0;background:url('bg_obreros.jpg') center top/cover no-repeat;opacity:.04}
 .participar-top{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:end;position:relative;z-index:1;margin-bottom:2.5rem}
 .participar-top .sh-l{color:var(--text)}
 .part-btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2.5rem;position:relative;z-index:1}
-.packs-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.08);border-radius:var(--rad);border:1px solid rgba(0,0,0,.08);position:relative;z-index:1}
-.packs-wrap2{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.08);border-top:none;border-radius:0 0 var(--rad) var(--rad);position:relative;z-index:1}
-.pack{background:#fff;padding:1.85rem 1.6rem;display:flex;flex-direction:column;position:relative;transform-style:preserve-3d;transition:transform .6s ease;min-height:260px;border-radius:0}
-.pack-front{backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;height:100%}
-.pack:hover{background:#f5f5f3}
-.pack-tier{display:flex;align-items:center;gap:.55rem;margin-bottom:.55rem}
+.packs-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative;z-index:1;margin-bottom:16px}
+.packs-wrap2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative;z-index:1}
+/* Wrapper para perspectiva */
+.pack-flip-wrap{height:280px;perspective:1200px}
+/* El pack rota */
+.pack{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.pack.flipped{transform:rotateY(180deg)}
+/* Caras */
+.pack-front,.pack-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--rad);padding:1.85rem 1.6rem;display:flex;flex-direction:column}
+.pack-front{background:#fff;border:1px solid rgba(0,0,0,.08)}
+.pack-back{background:var(--dark2);transform:rotateY(180deg);align-items:center;justify-content:center;text-align:center;gap:.6rem;border:1px solid rgba(212,175,55,.2)}
+.pack-tier{display:flex;align-items:center;gap:.55rem;margin-bottom:.4rem}
 .pdot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
 .pname{font-family:var(--font);font-weight:700;font-size:1.4rem;text-transform:uppercase;letter-spacing:.04em}
-.pquota{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:1rem}
-.pdiv{height:1px;background:rgba(0,0,0,.07);margin-bottom:1rem}
-/* info oculta: sólo se ve el botón en el frente */
-.pack-front .pbens{display:none}
+.pquota{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);margin-bottom:.75rem}
+.pdiv{height:1px;background:rgba(0,0,0,.07);margin-bottom:.75rem}
 .pcta{margin-top:auto;width:100%;background:var(--gold);border:none;color:var(--dark);padding:.82rem;border-radius:999px;font-family:var(--font);font-weight:700;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-align:center;transition:all .2s;display:block}
 .pcta:hover{background:var(--gold-l)}
-.pack-back{position:absolute;inset:0;background:var(--dark2);padding:1.75rem 1.6rem;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden;text-align:center;gap:.65rem;z-index:2}
-.pack-back-title{font-family:var(--font);font-weight:800;font-size:1.4rem;color:var(--gold);text-transform:uppercase}
-.pack-back-tier{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--w3);margin-top:-.2rem}
+.pack-back-title{font-family:var(--font);font-weight:800;font-size:1.3rem;color:var(--gold);text-transform:uppercase}
+.pack-back-tier{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--w3)}
 .pack-back ul{list-style:none;text-align:left;width:100%}
-.pack-back ul li{font-size:.85rem;color:var(--w7);display:flex;align-items:flex-start;gap:.4rem;line-height:1.5;margin-bottom:.38rem}
-.pack-back ul li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;font-size:.75rem;margin-top:2px}
+.pack-back ul li{font-size:.83rem;color:var(--w7);display:flex;align-items:flex-start;gap:.4rem;line-height:1.45;margin-bottom:.3rem}
+.pack-back ul li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;font-size:.72rem;margin-top:2px}
 .pack-back ul li.hi{color:var(--w);font-weight:700}
 .pack-back ul li.hi::before{content:'★'}
-.pack-back-btn{display:block;width:100%;background:var(--gold);color:var(--dark);padding:.78rem;border-radius:999px;font-family:var(--font);font-weight:700;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:none;transition:background .2s;margin-top:.25rem}
+.pack-back-btn{display:block;width:100%;background:var(--gold);color:var(--dark);padding:.75rem;border-radius:999px;font-family:var(--font);font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border:none;transition:background .2s}
 .pack-back-btn:hover{background:var(--gold-l)}
-.pack-back-return{font-size:.72rem;color:var(--w3);cursor:pointer;background:none;border:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;font-family:var(--font)}
+.pack-back-return{font-size:.7rem;color:var(--w3);cursor:pointer;background:none;border:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;font-family:var(--font)}
 .pack-back-return:hover{color:var(--w7)}
-.pack.flipped{transform:rotateY(180deg)}
 .pdot-dia{background:#9b59b6}.pname-dia{color:#9b59b6}
 .pdot-pla{background:#7fb3d3}.pname-pla{color:#7fb3d3}
 .pdot-oro{background:var(--gold)}.pname-oro{color:var(--gold-d)}
@@ -344,8 +346,8 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
 <section class="ejes-sec" id="ejes">
   <span class="sl">Agenda del Evento</span>
   <div class="sl-line"></div>
-  <div class="sh" data-s="up">Los Seis Ejes Centrales</div>
-  <p class="ss" data-s="up" data-delay="0.08">Tocá cada imagen para descubrir lo que te espera</p>
+  <div class="sh" data-s="up">Los Tres Ejes Centrales</div>
+  <p class="ss" data-s="up" data-delay="0.08">Tocá cada imagen para descubrir lo que te espera. Los ejes complementarios se presentan debajo.</p>
   <div class="ejes-grid" style="margin-bottom:1.5rem">
     <div class="fc" onclick="toggleFlip(this)" data-s="up" data-delay="0">
       <div class="fc-inner">
@@ -494,137 +496,149 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
     <a href="#contacto" class="btn-g">Consultar</a>
   </div>
   <div class="packs-wrap">
-    <div class="pack" data-s="up" data-delay="0">
-      <div class="pack-front">
-        <div class="pack-tier"><div class="pdot pdot-dia"></div><div class="pname pname-dia">Diamante</div></div>
-        <div class="pquota">Incluye 1 silo · 4 cupos</div>
-        <div class="pdiv"></div>
-        <button class="pcta" onclick="flipPack(this,'Diamante')">Quiero este pack</button>
-      </div>
-      <div class="pack-back">
-        <div class="pack-back-title">Diamante</div>
-        <div class="pack-back-tier">Incluye 1 silo · 4 cupos</div>
-        <ul>
-          <li class="hi">Naming exclusivo del evento</li>
-          <li class="hi">Logo dominante en toda comunicación</li>
-          <li class="hi">Apertura o cierre protagonista</li>
-          <li>Stand Premium con identidad propia</li>
-          <li>3 Conferencias Técnicas</li>
-          <li>10 invitaciones al Congreso</li>
-          <li>5 Rondas de Negocios</li>
-        </ul>
-        <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
-        <button class="pack-back-return" onclick="unflip(this)">← Volver</button>
-      </div>
-    </div>
-    <div class="pack" data-s="zoom" data-delay="0.1">
-      <div class="pack-front">
-        <div class="pack-tier"><div class="pdot pdot-pla"></div><div class="pname pname-pla">Platino</div></div>
-        <div class="pquota">Cupo Limitado</div>
-        <div class="pdiv"></div>
-        <button class="pcta" onclick="flipPack(this,'Platino')">Quiero este pack</button>
-      </div>
-      <div class="pack-back">
-        <div class="pack-back-title">Platino</div>
-        <div class="pack-back-tier">Cupo Limitado</div>
-        <ul>
-          <li class="hi">Logo preferencial — gráfica, web y redes</li>
-          <li class="hi">Bloque institucional en aftermovie</li>
-          <li>Stand preferencial en Zona Central</li>
-          <li>Acceso sector VIP</li>
-          <li>2 Conferencias Técnicas</li>
-          <li>10 invitaciones al Congreso</li>
-          <li>4 Rondas de Negocios</li>
-        </ul>
-        <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
-        <button class="pack-back-return" onclick="unflip(this)">← Volver</button>
+    <div class="pack-flip-wrap" data-s="up" data-delay="0">
+      <div class="pack" id="pack-Diamante">
+        <div class="pack-front">
+          <div class="pack-tier"><div class="pdot pdot-dia"></div><div class="pname pname-dia">Diamante</div></div>
+          <div class="pquota">Incluye 1 silo · 4 cupos</div>
+          <div class="pdiv"></div>
+          <button class="pcta" onclick="flipPack('Diamante')">Quiero este pack</button>
+        </div>
+        <div class="pack-back">
+          <div class="pack-back-title">Diamante</div>
+          <div class="pack-back-tier">Incluye 1 silo · 4 cupos</div>
+          <ul>
+            <li class="hi">Naming exclusivo del evento</li>
+            <li class="hi">Logo dominante en toda comunicación</li>
+            <li class="hi">Apertura o cierre protagonista</li>
+            <li>Stand Premium con identidad propia</li>
+            <li>3 Conferencias Técnicas</li>
+            <li>10 invitaciones al Congreso</li>
+            <li>5 Rondas de Negocios</li>
+          </ul>
+          <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
+          <button class="pack-back-return" onclick="unflip('Diamante')">← Volver</button>
+        </div>
       </div>
     </div>
-    <div class="pack" data-s="up" data-delay="0.2">
-      <div class="pack-front">
-        <div class="pack-tier"><div class="pdot pdot-oro"></div><div class="pname pname-oro">Oro</div></div>
-        <div class="pquota">Cupo Abierto</div>
-        <div class="pdiv"></div>
-        <button class="pcta" onclick="flipPack(this,'Oro')">Quiero este pack</button>
+    <div class="pack-flip-wrap" data-s="zoom" data-delay="0.1">
+      <div class="pack" id="pack-Platino">
+        <div class="pack-front">
+          <div class="pack-tier"><div class="pdot pdot-pla"></div><div class="pname pname-pla">Platino</div></div>
+          <div class="pquota">Cupo Limitado</div>
+          <div class="pdiv"></div>
+          <button class="pcta" onclick="flipPack('Platino')">Quiero este pack</button>
+        </div>
+        <div class="pack-back">
+          <div class="pack-back-title">Platino</div>
+          <div class="pack-back-tier">Cupo Limitado</div>
+          <ul>
+            <li class="hi">Logo preferencial — gráfica, web y redes</li>
+            <li class="hi">Bloque institucional en aftermovie</li>
+            <li>Stand preferencial en Zona Central</li>
+            <li>Acceso sector VIP</li>
+            <li>2 Conferencias Técnicas</li>
+            <li>10 invitaciones al Congreso</li>
+            <li>4 Rondas de Negocios</li>
+          </ul>
+          <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
+          <button class="pack-back-return" onclick="unflip('Platino')">← Volver</button>
+        </div>
       </div>
-      <div class="pack-back">
-        <div class="pack-back-title">Oro</div>
-        <div class="pack-back-tier">Cupo Abierto</div>
-        <ul>
-          <li class="hi">Logo en web y redes sociales</li>
-          <li>Imágenes en aftermovie oficial</li>
-          <li>Stand en Zona Central</li>
-          <li>1 Conferencia Técnica</li>
-          <li>8 invitaciones al Congreso</li>
-          <li>3 Rondas de Negocios</li>
-        </ul>
-        <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
-        <button class="pack-back-return" onclick="unflip(this)">← Volver</button>
+    </div>
+    <div class="pack-flip-wrap" data-s="up" data-delay="0.2">
+      <div class="pack" id="pack-Oro">
+        <div class="pack-front">
+          <div class="pack-tier"><div class="pdot pdot-oro"></div><div class="pname pname-oro">Oro</div></div>
+          <div class="pquota">Cupo Abierto</div>
+          <div class="pdiv"></div>
+          <button class="pcta" onclick="flipPack('Oro')">Quiero este pack</button>
+        </div>
+        <div class="pack-back">
+          <div class="pack-back-title">Oro</div>
+          <div class="pack-back-tier">Cupo Abierto</div>
+          <ul>
+            <li class="hi">Logo en web y redes sociales</li>
+            <li>Imágenes en aftermovie oficial</li>
+            <li>Stand en Zona Central</li>
+            <li>1 Conferencia Técnica</li>
+            <li>8 invitaciones al Congreso</li>
+            <li>3 Rondas de Negocios</li>
+          </ul>
+          <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
+          <button class="pack-back-return" onclick="unflip('Oro')">← Volver</button>
+        </div>
       </div>
     </div>
   </div>
   <div class="packs-wrap2">
-    <div class="pack" data-s="up" data-delay="0">
-      <div class="pack-front">
-        <div class="pack-tier"><div class="pdot pdot-plat"></div><div class="pname pname-plat">Plata</div></div>
-        <div class="pquota">Cupo Abierto</div>
-        <div class="pdiv"></div>
-        <button class="pcta" onclick="flipPack(this,'Plata')">Quiero este pack</button>
-      </div>
-      <div class="pack-back">
-        <div class="pack-back-title">Plata</div>
-        <div class="pack-back-tier">Cupo Abierto</div>
-        <ul>
-          <li class="hi">Logo en web y redes sociales</li>
-          <li>Créditos en aftermovie oficial</li>
-          <li>Stand en Sector General</li>
-          <li>6 invitaciones al Congreso</li>
-          <li>Ronda de Negocios</li>
-        </ul>
-        <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
-        <button class="pack-back-return" onclick="unflip(this)">← Volver</button>
-      </div>
-    </div>
-    <div class="pack" data-s="up" data-delay="0.1">
-      <div class="pack-front">
-        <div class="pack-tier"><div class="pdot pdot-bron"></div><div class="pname pname-bron">Bronce</div></div>
-        <div class="pquota">Cupo Abierto</div>
-        <div class="pdiv"></div>
-        <button class="pcta" onclick="flipPack(this,'Bronce')">Quiero este pack</button>
-      </div>
-      <div class="pack-back">
-        <div class="pack-back-title">Bronce</div>
-        <div class="pack-back-tier">Cupo Abierto</div>
-        <ul>
-          <li class="hi">Logo en web y redes sociales</li>
-          <li>Créditos en aftermovie oficial</li>
-          <li>Stand en Sector General</li>
-          <li>2 invitaciones al Congreso</li>
-          <li>Ronda de Negocios</li>
-        </ul>
-        <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
-        <button class="pack-back-return" onclick="unflip(this)">← Volver</button>
+    <div class="pack-flip-wrap" data-s="up" data-delay="0">
+      <div class="pack" id="pack-Plata">
+        <div class="pack-front">
+          <div class="pack-tier"><div class="pdot pdot-plat"></div><div class="pname pname-plat">Plata</div></div>
+          <div class="pquota">Cupo Abierto</div>
+          <div class="pdiv"></div>
+          <button class="pcta" onclick="flipPack('Plata')">Quiero este pack</button>
+        </div>
+        <div class="pack-back">
+          <div class="pack-back-title">Plata</div>
+          <div class="pack-back-tier">Cupo Abierto</div>
+          <ul>
+            <li class="hi">Logo en web y redes sociales</li>
+            <li>Créditos en aftermovie oficial</li>
+            <li>Stand en Sector General</li>
+            <li>6 invitaciones al Congreso</li>
+            <li>Ronda de Negocios</li>
+          </ul>
+          <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
+          <button class="pack-back-return" onclick="unflip('Plata')">← Volver</button>
+        </div>
       </div>
     </div>
-    <div class="pack" data-s="up" data-delay="0.2">
-      <div class="pack-front">
-        <div class="pack-tier"><div class="pdot pdot-pyme"></div><div class="pname pname-pyme">Pymes</div></div>
-        <div class="pquota">Cupo Abierto</div>
-        <div class="pdiv"></div>
-        <button class="pcta" onclick="flipPack(this,'Pymes')">Quiero este pack</button>
+    <div class="pack-flip-wrap" data-s="up" data-delay="0.1">
+      <div class="pack" id="pack-Bronce">
+        <div class="pack-front">
+          <div class="pack-tier"><div class="pdot pdot-bron"></div><div class="pname pname-bron">Bronce</div></div>
+          <div class="pquota">Cupo Abierto</div>
+          <div class="pdiv"></div>
+          <button class="pcta" onclick="flipPack('Bronce')">Quiero este pack</button>
+        </div>
+        <div class="pack-back">
+          <div class="pack-back-title">Bronce</div>
+          <div class="pack-back-tier">Cupo Abierto</div>
+          <ul>
+            <li class="hi">Logo en web y redes sociales</li>
+            <li>Créditos en aftermovie oficial</li>
+            <li>Stand en Sector General</li>
+            <li>2 invitaciones al Congreso</li>
+            <li>Ronda de Negocios</li>
+          </ul>
+          <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
+          <button class="pack-back-return" onclick="unflip('Bronce')">← Volver</button>
+        </div>
       </div>
-      <div class="pack-back">
-        <div class="pack-back-title">Pymes</div>
-        <div class="pack-back-tier">Cupo Abierto</div>
-        <ul>
-          <li class="hi">Logo en web y redes sociales</li>
-          <li>Créditos en aftermovie oficial</li>
-          <li>Rondas Técnicas</li>
-          <li>Invitaciones al Congreso</li>
-          <li>Ronda de Negocios</li>
-        </ul>
-        <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
-        <button class="pack-back-return" onclick="unflip(this)">← Volver</button>
+    </div>
+    <div class="pack-flip-wrap" data-s="up" data-delay="0.2">
+      <div class="pack" id="pack-Pymes">
+        <div class="pack-front">
+          <div class="pack-tier"><div class="pdot pdot-pyme"></div><div class="pname pname-pyme">Pymes</div></div>
+          <div class="pquota">Cupo Abierto</div>
+          <div class="pdiv"></div>
+          <button class="pcta" onclick="flipPack('Pymes')">Quiero este pack</button>
+        </div>
+        <div class="pack-back">
+          <div class="pack-back-title">Pymes</div>
+          <div class="pack-back-tier">Cupo Abierto</div>
+          <ul>
+            <li class="hi">Logo en web y redes sociales</li>
+            <li>Créditos en aftermovie oficial</li>
+            <li>Rondas Técnicas</li>
+            <li>Invitaciones al Congreso</li>
+            <li>Ronda de Negocios</li>
+          </ul>
+          <a href="#contacto" class="pack-back-btn">Consultar Disponibilidad</a>
+          <button class="pack-back-return" onclick="unflip('Pymes')">← Volver</button>
+        </div>
       </div>
     </div>
   </div>
@@ -750,8 +764,16 @@ const ml=document.getElementById('mapLeft');
 if(ml){let drag=false,sx,sy,smx,smy;ml.addEventListener('mousedown',e=>{drag=true;sx=e.clientX;sy=e.clientY;smx=mX;smy=mY;ml.style.cursor='grabbing';});document.addEventListener('mousemove',e=>{if(!drag)return;mX=smx+(e.clientX-sx)/mScale;mY=smy+(e.clientY-sy)/mScale;applyM();});document.addEventListener('mouseup',()=>{drag=false;ml.style.cursor='grab';});ml.addEventListener('wheel',e=>{e.preventDefault();mzoom(e.deltaY<0?1.15:.87);},{passive:false});}
 
 // PACK FLIP
-function flipPack(el,name){const pack=el.closest('.pack');pack.classList.add('flipped');const sel=document.querySelector('[name="participacion"]');if(sel)for(let o of sel.options)if(o.text===name){sel.value=o.value;break;}}
-function unflip(el){el.closest('.pack').classList.remove('flipped');}
+function flipPack(name){
+  const pack=document.getElementById('pack-'+name);
+  if(pack) pack.classList.add('flipped');
+  const sel=document.querySelector('[name="participacion"]');
+  if(sel) for(let o of sel.options) if(o.text===name){sel.value=o.value;break;}
+}
+function unflip(name){
+  const pack=document.getElementById('pack-'+name);
+  if(pack) pack.classList.remove('flipped');
+}
 
 // EJES & PERFIL FLIP
 function toggleFlip(card){card.classList.toggle('flipped');}
