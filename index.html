@@ -47,8 +47,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:62px;display:flex;ali
 .hero{min-height:100vh;padding-top:62px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg)}
 .hero-grid-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(212,175,55,.08) 0%,transparent 70%),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(212,175,55,.05) 79px,rgba(212,175,55,.05) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(212,175,55,.05) 79px,rgba(212,175,55,.05) 80px)}
 .hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem 2rem 4rem;max-width:960px;width:100%}
-.hero-logo-wrap{margin-bottom:2.5rem;animation:fadeDown .9s ease both}
-.hero-logo-wrap img{width:min(420px,75vw);height:auto;image-rendering:crisp-edges;image-rendering:-webkit-optimize-contrast}
+.hero-logo-wrap{margin-bottom:1rem;animation:fadeDown .9s ease both}
+.hero-logo-wrap img{width:min(520px,80vw);height:auto}
 .hero-edition{font-size:.9rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1.2rem;animation:fadeDown .9s .1s ease both}
 .hero-title{font-size:clamp(3rem,7vw,6rem);font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em;margin-bottom:1.2rem;text-transform:uppercase;animation:fadeDown .9s .2s ease both}
 .hero-title span{color:var(--gold);font-style:italic}
@@ -96,7 +96,7 @@ section{padding:5.5rem 5rem}
 .ejes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto}
 
 /* IMPACTO */
-.impacto-sec{position:relative;background:url('bg_drilling.jpg') center/cover fixed}
+.impacto-sec{position:relative;background:url('bg_drilling.jpg') center/cover no-repeat}
 .impacto-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35)}
 .impacto-inner{position:relative;z-index:1}
 .imp-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1100px;margin:0 auto}
@@ -257,6 +257,9 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
 [data-s].vis{opacity:1!important;transform:none!important}
 
 /* RESPONSIVE */
+@media(min-width:1025px){
+  .impacto-sec{background-attachment:fixed}
+}
 @media(max-width:1024px){
   nav{padding:0 1.25rem}
   .nav-links{display:none}
