@@ -44,15 +44,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:62px;display:flex;ali
 .ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* HERO */
-.hero{min-height:100vh;padding-top:62px;position:relative;display:flex;align-items:center;justify-content:flex-start;overflow:hidden}
+.hero{min-height:100vh;padding-top:62px;position:relative;display:flex;align-items:flex-start;justify-content:flex-start;overflow:hidden}
 .hero-bg-img{position:absolute;inset:0;z-index:0}
 .hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center right;display:block}
-.hero-bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.1) 75%,transparent 100%)}
-.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:3rem 5rem;max-width:660px;width:100%}
-.hero-logo-wrap{margin-bottom:.6rem;animation:fadeDown .9s ease both}
-.hero-logo-wrap img{width:min(360px,65vw);height:auto}
-.hero-edition{font-size:.82rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,175,55,.9);margin-bottom:1rem;animation:fadeDown .9s .1s ease both}
-.hero-title{font-size:clamp(2.4rem,5vw,4.8rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em;margin-bottom:1.2rem;text-transform:uppercase;animation:fadeDown .9s .2s ease both}
+.hero-bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.6) 45%,rgba(0,0,0,.15) 75%,transparent 100%)}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:2.5rem 5rem 4rem;max-width:660px;width:100%;min-height:calc(100vh - 62px);justify-content:space-between}
+.hero-logo-wrap{animation:fadeDown .9s ease both}
+.hero-logo-wrap img{width:min(200px,38vw);height:auto}
+.hero-content-bottom{display:flex;flex-direction:column}
+.hero-title{font-size:clamp(2.6rem,5.5vw,5.2rem);font-weight:800;color:#fff;line-height:.95;letter-spacing:-.02em;margin-bottom:1.2rem;text-transform:uppercase;animation:fadeDown .9s .2s ease both}
 .hero-title span{color:var(--gold);font-style:italic}
 .hero-sub{font-size:clamp(.95rem,1.5vw,1.15rem);color:rgba(255,255,255,.8);font-weight:400;max-width:480px;line-height:1.7;margin-bottom:1.5rem;animation:fadeDown .9s .3s ease both}
 .hero-meta{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem;animation:fadeDown .9s .4s ease both}
@@ -340,20 +340,22 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
     <div class="hero-logo-wrap">
       <img src="logo_v2.png" alt="Vaca Muerta Construye">
     </div>
-    <h1 class="hero-title">La Expo<br>de la<br><span>Construcción</span></h1>
-    <div class="hero-meta">
-      <div class="hero-meta-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        <strong>26, 27 y 28 de Agosto de 2026</strong>
+    <div class="hero-content-bottom">
+      <h1 class="hero-title">La Expo<br>de la<br><span>Construcción</span></h1>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <strong>26, 27 y 28 de Agosto de 2026</strong>
+        </div>
+        <div class="hero-meta-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Espacio DUAM · <strong>Ciudad de Neuquén, Argentina</strong></span>
+        </div>
       </div>
-      <div class="hero-meta-item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Espacio DUAM · <strong>Ciudad de Neuquén, Argentina</strong></span>
+      <div class="hero-btns">
+        <a href="#participar" class="btn-g">Reservar Stand</a>
+        <a href="#ejes" class="btn-o">Conocer el Evento</a>
       </div>
-    </div>
-    <div class="hero-btns">
-      <a href="#participar" class="btn-g">Reservar Stand</a>
-      <a href="#ejes" class="btn-o">Conocer el Evento</a>
     </div>
   </div>
 </section>
