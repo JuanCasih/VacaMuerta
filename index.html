@@ -44,23 +44,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;height:62px;display:flex;ali
 .ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* HERO */
-.hero{min-height:100vh;padding-top:62px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg)}
-.hero-grid-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(212,175,55,.08) 0%,transparent 70%),repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(212,175,55,.05) 79px,rgba(212,175,55,.05) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(212,175,55,.05) 79px,rgba(212,175,55,.05) 80px)}
-.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem 2rem 4rem;max-width:960px;width:100%}
+.hero{min-height:100vh;padding-top:62px;position:relative;display:flex;align-items:center;justify-content:flex-start;overflow:hidden}
+.hero-bg-img{position:absolute;inset:0;z-index:0}
+.hero-bg-img img{width:100%;height:100%;object-fit:cover;object-position:center right;display:block}
+.hero-bg-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.1) 75%,transparent 100%)}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:3rem 5rem;max-width:660px;width:100%}
 .hero-logo-wrap{margin-bottom:1rem;animation:fadeDown .9s ease both}
-.hero-logo-wrap img{width:min(520px,80vw);height:auto}
-.hero-edition{font-size:.9rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1.2rem;animation:fadeDown .9s .1s ease both}
-.hero-title{font-size:clamp(3rem,7vw,6rem);font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em;margin-bottom:1.2rem;text-transform:uppercase;animation:fadeDown .9s .2s ease both}
+.hero-logo-wrap img{width:min(200px,45vw);height:auto}
+.hero-edition{font-size:.82rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(212,175,55,.9);margin-bottom:1rem;animation:fadeDown .9s .1s ease both}
+.hero-title{font-size:clamp(2.4rem,5vw,4.8rem);font-weight:800;color:#fff;line-height:1;letter-spacing:-.02em;margin-bottom:1.2rem;text-transform:uppercase;animation:fadeDown .9s .2s ease both}
 .hero-title span{color:var(--gold);font-style:italic}
-.hero-sub{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--text-light);font-weight:400;max-width:620px;line-height:1.75;margin-bottom:2rem;animation:fadeDown .9s .3s ease both}
-.hero-meta{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem;animation:fadeDown .9s .4s ease both}
-.hero-meta-item{display:flex;align-items:center;gap:.6rem;color:var(--text-light);font-size:1rem;font-weight:600}
+.hero-sub{font-size:clamp(.95rem,1.5vw,1.15rem);color:rgba(255,255,255,.8);font-weight:400;max-width:480px;line-height:1.7;margin-bottom:1.5rem;animation:fadeDown .9s .3s ease both}
+.hero-meta{display:flex;flex-direction:column;gap:.6rem;margin-bottom:2rem;animation:fadeDown .9s .4s ease both}
+.hero-meta-item{display:flex;align-items:center;gap:.6rem;color:rgba(255,255,255,.85);font-size:.95rem;font-weight:600}
 .hero-meta-item svg{color:var(--gold);flex-shrink:0}
-.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center;animation:fadeDown .9s .5s ease both}
+.hero-meta-item strong{color:#fff}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;animation:fadeDown .9s .5s ease both}
 .btn-g{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--dark);border:none;padding:.95rem 2.4rem;border-radius:999px;font-family:var(--font);font-weight:700;font-size:.95rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
 .btn-g:hover{background:var(--gold-l);transform:translateY(-2px)}
-.btn-o{display:inline-flex;align-items:center;gap:6px;background:transparent;color:var(--text);border:1px solid rgba(212,175,55,.6);padding:.95rem 2.4rem;border-radius:999px;font-family:var(--font);font-weight:700;font-size:.95rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
-.btn-o:hover{border-color:var(--gold);color:var(--gold-d)}
+.btn-o{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);padding:.95rem 2.4rem;border-radius:999px;font-family:var(--font);font-weight:700;font-size:.95rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
 
 /* SECTIONS */
@@ -284,13 +287,17 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
 @media(max-width:640px){
   nav{height:54px;padding:0 1rem}
   .hero{padding-top:54px}
+  .hero-inner{padding:2rem 1.5rem;max-width:100%}
+  .hero-bg-img img{object-position:70% center}
+  .hero-bg-overlay{background:linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.55) 100%)}
+  .hero-logo-wrap img{width:min(160px,50vw)}
+  .hero-meta{gap:.5rem}
+  .hero-btns{flex-direction:column;gap:.6rem}
+  .btn-g,.btn-o{justify-content:center;width:100%}
   section{padding:3rem 1.25rem}
   .carousel-sec{padding:3rem 0}
   .cs{height:300px!important}
   .cs img{height:300px!important}
-  .hero-meta{gap:1rem}
-  .hero-btns{flex-direction:column;gap:.6rem}
-  .btn-g,.btn-o{justify-content:center;width:100%}
   .imp-nums{grid-template-columns:repeat(2,1fr)}
   .part-btns{flex-direction:column}
   footer{padding:2.5rem 1.25rem}
@@ -322,22 +329,24 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
 </nav>
 
 <section class="hero" id="inicio">
-  <div class="hero-grid-bg"></div>
+  <div class="hero-bg-img">
+    <img src="hero_bg.jpg" alt="Vaca Muerta Construye 2026">
+  </div>
+  <div class="hero-bg-overlay"></div>
   <div class="hero-inner">
     <div class="hero-logo-wrap">
-      <img src="logo_v2.png" alt="Vaca Muerta Construye 2026">
+      <img src="logo_v2.png" alt="Vaca Muerta Construye">
     </div>
     <p class="hero-edition">La Expo de la Construcción · 1ª Edición · Nacional e Internacional</p>
-    <h1 class="hero-title">Vaca Muerta <span>Construye</span></h1>
-    <p class="hero-sub">El evento más importante de la construcción en la región. Tres días de exposición, negocios y conocimiento en el corazón de Vaca Muerta.</p>
+    <h1 class="hero-title">La Expo<br>de la<br><span>Construcción</span></h1>
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        27, 28 y 29 de Agosto de 2026
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <strong>26, 27 y 28 de Agosto de 2026</strong>
       </div>
       <div class="hero-meta-item">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Espacio DUAM · Neuquén, Argentina
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Espacio DUAM · <strong>Ciudad de Neuquén, Argentina</strong></span>
       </div>
     </div>
     <div class="hero-btns">
@@ -723,16 +732,31 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
   <div class="foot-inner">
     <div>
       <div class="foot-brand"><img src="logo_v2.png" alt="Vaca Muerta Construye"></div>
-      <div class="foot-copy">Infraestructura, inversión y desarrollo para el futuro energético.<br>La Expo de la Construcción · 1ª Edición Nacional e Internacional<br>27, 28 y 29 de Agosto de 2026 · Espacio DUAM · Ciudad de Neuquén, Argentina<br>© 2026 Vaca Muerta Construye · Organiza: Gold Black Business</div>
+      <div class="foot-copy">
+        Infraestructura, inversión y desarrollo para el futuro energético.<br>
+        La Expo de la Construcción · 1ª Edición Nacional e Internacional<br>
+        26, 27 y 28 de Agosto de 2026 · Espacio DUAM · Ciudad de Neuquén, Argentina<br>
+        © 2026 Vaca Muerta Construye
+      </div>
     </div>
     <div class="foot-right">
       <div class="foot-soc">
-        <a href="https://linkedin.com" target="_blank" class="soc"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="https://instagram.com/vacamuerta.construye" target="_blank" class="soc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a href="https://x.com" target="_blank" class="soc"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="mailto:info@vacamuertaconstruye.com" target="_blank" class="soc" title="Gmail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.548l8.073-6.055C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        </a>
+        <a href="https://instagram.com/vacamuerta.construye" target="_blank" class="soc">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://x.com" target="_blank" class="soc">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
       </div>
       <div class="foot-url">www.vacamuertaconstruye.com</div>
-      <div class="foot-creds">Desarrollado por VEA Marketing · +54 9 341 7496004</div>
+      <a href="mailto:info@vacamuertaconstruye.com" class="foot-url" style="margin-top:-.4rem">info@vacamuertaconstruye.com</a>
+      <div style="display:flex;align-items:center;gap:.5rem;margin-top:.2rem">
+        <span style="font-size:.67rem;color:var(--text-light)">Organiza:</span>
+        <img src="gbb_logo.png" alt="Gold Black Business" style="height:28px;width:auto;opacity:.85">
+      </div>
     </div>
   </div>
 </footer>
