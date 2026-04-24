@@ -235,15 +235,18 @@ section{padding:5.5rem 5rem}
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5rem}
 .foot-inner{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
-.foot-brand{margin-bottom:.65rem}
-.foot-brand img{height:48px;width:auto;display:block}
-.foot-copy{font-size:.72rem;color:var(--text-light);line-height:1.85;margin-top:.85rem}
+.foot-copy{font-size:.72rem;color:var(--text-light);line-height:1.85}
 .foot-right{display:flex;flex-direction:column;align-items:flex-end;gap:.9rem}
 .foot-soc{display:flex;gap:.5rem}
 .soc{width:40px;height:40px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--dark);transition:all .2s}
 .soc:hover{background:var(--gold-l);transform:translateY(-2px)}
 .foot-url{font-size:.72rem;color:var(--gold-d);font-weight:600}
-.foot-creds{font-size:.67rem;color:var(--text-light);text-align:right}
+.foot-organiza{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem;margin-top:.3rem}
+.foot-organiza-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light)}
+.foot-gbb-logo{height:100px;width:auto;max-width:260px}
+@media(max-width:640px){
+  .foot-gbb-logo{height:70px;max-width:200px}
+}
 
 /* WA */
 .wa{position:fixed;bottom:1.75rem;right:1.75rem;z-index:400;display:flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;padding:.7rem 1.3rem .7rem .85rem;border-radius:999px;font-family:var(--font);font-weight:700;font-size:.85rem;box-shadow:0 4px 24px rgba(37,211,102,.4);transition:all .25s;animation:wapop .6s .8s both}
@@ -735,7 +738,6 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
 <footer>
   <div class="foot-inner">
     <div>
-      <div class="foot-brand"><img src="gbb_logo.png" alt="Gold Black Business" style="height:80px;width:auto"></div>
       <div class="foot-copy">
         Infraestructura, inversión y desarrollo para el futuro energético.<br>
         La Expo de la Construcción · 1ª Edición Nacional e Internacional<br>
@@ -757,9 +759,9 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
       </div>
       <div class="foot-url">www.vacamuertaconstruye.com</div>
       <a href="mailto:info@vacamuertaconstruye.com" class="foot-url" style="margin-top:-.4rem">info@vacamuertaconstruye.com</a>
-      <div style="display:flex;flex-direction:column;gap:.4rem;margin-top:.5rem">
-        <span style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light)">Organiza:</span>
-        <img src="gbb_logo.png" alt="Gold Black Business" style="height:60px;width:auto">
+      <div class="foot-organiza">
+        <span class="foot-organiza-label">Organiza:</span>
+        <img src="gbb_logo.png" alt="Gold Black Business" class="foot-gbb-logo">
       </div>
     </div>
   </div>
