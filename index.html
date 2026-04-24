@@ -363,8 +363,8 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
 <section class="ejes-sec" id="ejes">
   <span class="sl">Agenda del Evento</span>
   <div class="sl-line"></div>
-  <div class="sh" data-s="up">Los Tres Ejes Centrales</div>
-  <p class="ss" data-s="up" data-delay="0.08">Tocá cada imagen para descubrir lo que te espera. Los ejes complementarios se presentan debajo.</p>
+  <div class="sh" data-s="up">Los Seis Ejes Centrales</div>
+  <p class="ss" data-s="up" data-delay="0.08">Tocá cada imagen para descubrir lo que te espera</p>
   <div class="ejes-grid" style="margin-bottom:1.5rem">
     <div class="fc" onclick="toggleFlip(this)" data-s="up" data-delay="0">
       <div class="fc-inner">
@@ -717,7 +717,7 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
       </div>
     </div>
     <div data-s="right">
-      <form class="form" id="cf" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form class="form" id="cf" action="https://formspree.io/f/mkokypng" method="POST">
         <div class="fr"><div class="fg"><label>Nombre y Apellido *</label><input type="text" name="nombre" placeholder="Tu nombre completo" required></div><div class="fg"><label>Email *</label><input type="email" name="email" placeholder="email@empresa.com" required></div></div>
         <div class="fr"><div class="fg"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+54 9..."></div><div class="fg"><label>Empresa *</label><input type="text" name="empresa" placeholder="Razón social" required></div></div>
         <div class="fg"><label>Motivo de contacto *</label><select name="participacion" required><option value="" disabled selected>Seleccioná una opción</option><option>Diamante</option><option>Platino</option><option>Oro</option><option>Plata</option><option>Bronce</option><option>Pymes</option><option>Sponsor institucional</option><option>Participación en Congreso</option><option>Visita del público general</option><option>Consulta general</option></select></div>
@@ -757,9 +757,9 @@ footer{background:var(--bg);border-top:1px solid rgba(0,0,0,.1);padding:3rem 5re
       </div>
       <div class="foot-url">www.vacamuertaconstruye.com</div>
       <a href="mailto:info@vacamuertaconstruye.com" class="foot-url" style="margin-top:-.4rem">info@vacamuertaconstruye.com</a>
-      <div style="display:flex;align-items:center;gap:.5rem;margin-top:.2rem">
-        <span style="font-size:.67rem;color:var(--text-light)">Organiza:</span>
-        <img src="gbb_logo.png" alt="Gold Black Business" style="height:28px;width:auto;opacity:.9">
+      <div style="display:flex;flex-direction:column;gap:.4rem;margin-top:.5rem">
+        <span style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light)">Organiza:</span>
+        <img src="gbb_logo.png" alt="Gold Black Business" style="height:60px;width:auto">
       </div>
     </div>
   </div>
@@ -820,7 +820,33 @@ function toggleDay(hdr){const body=hdr.nextElementSibling;const isOpen=body.clas
 
 // FORM
 const cf=document.getElementById('cf');
-if(cf){cf.addEventListener('submit',async e=>{e.preventDefault();const btn=document.getElementById('fbtn'),msg=document.getElementById('fmsg');btn.disabled=true;btn.textContent='Enviando...';msg.className='fmsg';try{const r=await fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{'Accept':'application/json'}});if(r.ok){msg.className='fmsg ok';msg.textContent='✓ ¡Consulta enviada! Te contactamos pronto.';cf.reset();btn.textContent='✓ Enviado';}else throw new Error();}catch{msg.className='fmsg err';msg.textContent='✕ Error. Escribinos a vacamuertaconstruye@gmail.com';btn.disabled=false;btn.textContent='ENVIAR';}});}
+if(cf){cf.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=document.getElementById('fbtn'),msg=document.getElementById('fmsg');
+  btn.disabled=true;btn.textContent='Enviando...';msg.className='fmsg';
+  try{
+    const r=await fetch('https://formspree.io/f/mkokypng',{
+      method:'POST',
+      body:new FormData(cf),
+      headers:{'Accept':'application/json'}
+    });
+    const data=await r.json();
+    if(r.ok){
+      msg.className='fmsg ok';
+      msg.textContent='✓ ¡Consulta enviada! Te contactamos pronto.';
+      cf.reset();
+      btn.textContent='✓ Enviado';
+    } else {
+      const errMsg=data.errors?.map(e=>e.message).join(', ')||'Error al enviar';
+      throw new Error(errMsg);
+    }
+  }catch(err){
+    msg.className='fmsg err';
+    msg.textContent='✕ '+( err.message||'Error. Escribinos a info@vacamuertaconstruye.com');
+    btn.disabled=false;
+    btn.textContent='ENVIAR';
+  }
+});}
 
 // ACTIVE NAV
 const navObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.nav-links a').forEach(l=>l.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active');}});},{threshold:.4});
